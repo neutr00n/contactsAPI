@@ -1,23 +1,23 @@
-import { saveData, getData, deleteData, updateData } from "./api";
+import { saveData, getData, deleteData, updateData } from './api';
 import {
   formRef,
   jsContainerRef,
   btnModalOpenRef,
   btnModalCloseRef,
   usersBaseModalRef,
-} from "./refs";
-import { createCard } from "./markup";
+} from './refs';
+import { createCard } from './markup';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./css/style.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/style.css';
 
 // let formData = {};
 
-formRef.addEventListener("submit", handleFormValue);
-jsContainerRef.addEventListener("click", deleteCard);
-jsContainerRef.addEventListener("input", jsContainerInput);
-btnModalOpenRef.addEventListener("click", handleOpenModalClick);
-btnModalCloseRef.addEventListener("click", handleCloseModalClick);
+formRef.addEventListener('submit', handleFormValue);
+jsContainerRef.addEventListener('click', deleteCard);
+jsContainerRef.addEventListener('input', jsContainerInput);
+btnModalOpenRef.addEventListener('click', handleOpenModalClick);
+btnModalCloseRef.addEventListener('click', handleCloseModalClick);
 
 async function handleFormValue(event) {
   event.preventDefault();
@@ -76,16 +76,16 @@ async function init() {
 init();
 
 function addMarkup(markup) {
-  jsContainerRef.insertAdjacentHTML("beforeend", markup);
+  jsContainerRef.insertAdjacentHTML('beforeend', markup);
 }
 
 async function deleteCard(evt) {
   try {
-    if (evt.target.nodeName !== "BUTTON") {
+    if (evt.target.nodeName !== 'BUTTON') {
       return;
     }
 
-    const cardWrapRef = evt.target.closest(".js-wrap-card");
+    const cardWrapRef = evt.target.closest('.js-wrap-card');
     const id = cardWrapRef.dataset.cardid;
 
     const response = await deleteData(id);
@@ -100,7 +100,7 @@ async function jsContainerInput(evt) {
   try {
     const value = evt.target.textContent;
 
-    const cardWrapRef = evt.target.closest(".js-wrap-card");
+    const cardWrapRef = evt.target.closest('.js-wrap-card');
     const id = cardWrapRef.dataset.cardid;
 
     const response = await updateData(id, { name: value });
@@ -110,17 +110,17 @@ async function jsContainerInput(evt) {
 }
 
 function handleOpenModalClick(event) {
-  window.addEventListener("keydown", handleEscCloseModal);
-  usersBaseModalRef.classList.remove("is-hidden");
+  window.addEventListener('keydown', handleEscCloseModal);
+  usersBaseModalRef.classList.remove('is-hidden');
 }
 
 function handleCloseModalClick(event) {
-  window.removeEventListener("keydown", handleEscCloseModal);
-  usersBaseModalRef.classList.add("is-hidden");
+  window.removeEventListener('keydown', handleEscCloseModal);
+  usersBaseModalRef.classList.add('is-hidden');
 }
 
 function handleEscCloseModal(event) {
-  if (event.code === "Escape") {
+  if (event.code === 'Escape') {
     handleCloseModalClick();
   }
 }
