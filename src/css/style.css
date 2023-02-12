@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(124, 252, 0, 0.8);
+
+  background: url(../img/apihero.png);
+  background-color: #c4c4c4;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  width: 520px;
+  height: 400px;
+  padding: 30px;
+
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.wrap__title {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+
+  text-align: center;
+
+  color: #212121;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.form-label {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 14px;
+
+  letter-spacing: 0.01em;
+
+  color: #757575;
+}
+
+.input {
+  width: 450px;
+  height: 46px;
+}
+
+.button {
+  display: block;
+  background-color: brown;
+  border: 1px solid tomato;
+  color: #fff;
+  padding: 10px 50px;
+  min-width: 150px;
+}
+
+.item {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 80%;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.text {
+  border: 1px solid red;
+  flex-grow: 2;
+  line-height: 3;
+  margin: 0;
+  padding: 0 15px;
+  font-size: 20px;
+}
+
+.checked {
+  opacity: 0.5;
+}
+
+.checked .text {
+  text-decoration: line-through;
+}
+
+.list {
+  padding: 20px;
+}
+
+.btn {
+  padding: 10px 50px;
+
+  border: 1px solid #757575;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.modal-contacts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  padding: 40px;
+
+  background-color: #e4dfdf;
+
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.modal-contacts.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-close-modal {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.btn-open-modal {
+  position: absolute;
+  top: 50px;
+  right: 120px;
+
+  width: 100px;
+  height: 100px;
+
+  color: #b3b0b0;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    149deg,
+    rgba(24, 187, 156, 1) 0%,
+    rgba(106, 57, 175, 1) 42%,
+    rgba(187, 24, 148, 1) 72%,
+    rgba(115, 53, 134, 1) 100%
+  );
+  animation: gradient 10s infinite linear;
+  background-size: 400%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}

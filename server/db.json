@@ -1,0 +1,32 @@
+{
+  "contacts": [
+    {
+      "name": "Pavel",
+      "number": "+3805656545888",
+      "email": "pavel@gmail.com",
+      "createdAt": 1676193108450,
+      "id": "EyqPlfj"
+    },
+    {
+      "name": "Viktor",
+      "number": "+380504665458",
+      "email": "viktor@gmail.com",
+      "createdAt": 1676218776340,
+      "id": "jzIpzl-"
+    },
+    {
+      "name": "Andrey",
+      "number": "+380506584588",
+      "email": "Andrey@gmail.com",
+      "createdAt": 1676218823185,
+      "id": "lEQKcxN"
+    },
+    {
+      "name": "Olya",
+      "number": "+309555478866",
+      "email": "olya@gmail.com",
+      "createdAt": 1676218914748,
+      "id": "FoZPSvj"
+    }
+  ]
+}
