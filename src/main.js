@@ -5,6 +5,7 @@ import {
   btnModalOpenRef,
   btnModalCloseRef,
   usersBaseModalRef,
+  submitBtnRef,
 } from './refs';
 import { createCard } from './markup';
 
@@ -13,13 +14,16 @@ import './css/style.css';
 
 // let formData = {};
 
-formRef.addEventListener('submit', handleFormValue);
+init();
+
+formRef.addEventListener('submit', handleFormSubmit);
+formRef.addEventListener('input', handleFormValue);
 jsContainerRef.addEventListener('click', deleteCard);
 jsContainerRef.addEventListener('input', jsContainerInput);
 btnModalOpenRef.addEventListener('click', handleOpenModalClick);
 btnModalCloseRef.addEventListener('click', handleCloseModalClick);
 
-async function handleFormValue(event) {
+async function handleFormSubmit(event) {
   event.preventDefault();
 
   // Вариант 1 *******************************************
@@ -63,6 +67,19 @@ async function handleFormValue(event) {
   event.target.reset();
 }
 
+function handleFormValue(event) {
+  const value = event.target.value.trim();
+  const input = event.target;
+
+  input.classList.remove('outline-error');
+  submitBtnRef.disabled = false;
+
+  if (!value) {
+    input.classList.add('outline-error');
+    submitBtnRef.disabled = true;
+  }
+}
+
 async function init() {
   try {
     const response = await getData();
@@ -73,7 +90,6 @@ async function init() {
     console.log(error.message);
   }
 }
-init();
 
 function addMarkup(markup) {
   jsContainerRef.insertAdjacentHTML('beforeend', markup);
